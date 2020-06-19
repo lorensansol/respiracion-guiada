@@ -1,0 +1,76 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    max-height: 100vh;
+    transition: .5s;
+}
+body {
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 1rem;
+}
+label,
+button {
+    display: block;
+}
+input[type="number"] {
+    width: 3rem;
+    text-align: right;
+}
+.hidden,
+.hidden + input {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+#lungs,
+#lungs > div {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+    animation-name: relax;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+#lungs > div {
+    content: '';
+    position: absolute;
+    background-image: radial-gradient(white 50%, transparent 80%);}
+@keyframes relax {
+    50% {
+        transform: scale(.8);
+    }
+}
+#lungs.inspire,
+#lungs.inspire > div {
+    animation-name: inspire;
+}
+@keyframes inspire {
+    from {
+        transform: scale(.25);
+    }
+}
+#lungs.expire,
+#lungs.expire > div {
+    animation-name: expire;
+}
+@keyframes expire {
+    to {
+        transform: scale(.25);
+    }
+}
+#lungs > span {
+    z-index: 10;
+    font-size: 2rem;
+}
+#heart {
+    animation: relax 5s infinite;
+}

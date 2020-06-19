@@ -1,0 +1,80 @@
+Antes de iniciar, se muestra
+	Opciones (+básicas -avanzadas ~ideas)
+	+	Botón para mostrar avanzadas
+	+	Nº de rondas (3)
+	+	Nº de respiraciones por ronda (30)
+	-	Tiempo de inspiración (1s)
+	-	Tiempo de espiración (1s)
+	-	Guías sonoras cada X respiraciones (0)
+	-	Guía sonora en X respiraciones restantes (5)
+	+	Tiempo de apnea con espiración base (60s)
+	+	Aumentador del tiempo de apnea con espiración tras cada ronda (20s)
+	-	Guías sonoras cada X segundos de apnea (20s)
+	-	Guía sonora en X segundos de apnea restantes (5)
+	-	Tiempo de apnea con inspiración (15s)
+	-	Tiempo de pausa tras apneas (5s)
+	-	Opciones en cada ronda (todas las opciones excepto el "Aumentador del tiempo de apnea con espiración")
+	~	Voz en off
+	~	Música ambiente
+	Título "Ronda 0"
+	Un círculo (u otra forma)
+		con un gradiente y un cero (o símbolo de infinito)
+		que va creciendo y encogiéndose, simulando respiraciones
+	Una fila por cada ronda con el nº de respiraciones y el tiempo de apnea + una fila final con el tiempo total en minutos y segundos y una guía de tiempo, que se actualizan al cambiar cualquier opción
+	Un botón de empezar
+Al iniciar, sucede en cada fase
+	General
+		Desaparece el botón de empezar
+		Aparece el botón pausar
+		Aparece el botón terminar
+		Comienza a correr la guía de tiempo total
+	Ronda
+		General
+			Comienzan a correr las guías sonoras de respiraciones
+			Se actualiza el título de ronda
+			Se actualiza el progreso de ronda activa
+		Inspiración
+			Sonido de inspiración
+			Se actualiza el nº de respiración
+			El círculo y la gradiente crecen
+		Espiración
+			Sonido de espiración
+			El círculo y la gradiente decrecen
+		Última inspiración (profunda)
+			Sonido de inspiración PROFUNDA
+			Sonido de última inspiración
+			Se actualiza el nº de respiración
+			El círculo y la gradiente crecen MÁS
+		Última espiración
+			Paran las guías sonoras de respiración
+			Igual a espiración
+			Desaparece el círculo
+		Apnea con espiración
+			Comienzan a correr las guías sonoras de apnea
+			Aparece una guía de cuenta atrás + se activa con el "Tiempo de apnea con espiración base"
+			Aparece un corazón latiendo
+		Inspiración (profunda)
+			Paran las guías sonoras de apnea
+			Desaparece el corazón
+			Reaparece el círculo con gradiente sin contador
+			Sonido de inspiración PROFUNDA
+			El círculo y la gradiente crecen MÁS
+		Apnea con inspiración
+			La guía de cuenta atrás se reinicia (o desaparece y e crea otra visualmente distinta) con el "Tiempo de apnea con inspiración"
+		Espiración
+			Desaparece la guía de cuenta atrás
+			Igual a espiración
+			Se reinicia el nº de respiración
+		Pausa tras apneas
+
+	Tras última ronda
+		General
+			Se actualiza el título de ronda a "Fin"
+			Se actualiza el progreso de ronda activa
+			Se reinicia el nº de respiración
+			El botón de terminar cambia por empezar
+	Al pulsa el botón pausar
+		Se debe pausar todo
+	Al pulsa el botón terminar
+		Se debe reiniciar todo
+

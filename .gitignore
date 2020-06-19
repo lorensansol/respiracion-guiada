@@ -1,0 +1,4 @@
+node_modules
+css/bulma*
+css/normalize.css
+*.DS_Store

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>MWH</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<section id="intro" class="hidden">
+		<h1>MWH</h1>
+		<p>¡Hola! Esta es una aplicación de guía de audio de respiraciones del Método Wim Hof totalmente pre-personalizable.</p>
+		<p>La idea de que, una vez comiences la sesión, no se requiera interactuar con tu dispositivo.</p>
+		<p>Tendrás guías visuales y de audio, por lo que puedes cerrar los ojos si lo deseas.</p>
+		<p>¡Dale loquit@!</p>
+	</section>
+	<form action="#">
+		<section id="options">
+			<h2>Opciones</h2>
+			<label>
+				<input id="rounds" type="number" value="3" min="1" max="10" step="1">
+				Rondas
+			</label>
+			<label>
+				<input id="breaths" type="number" value="3" min="20" max="80" step="5">
+				Respiraciones por ronda
+			</label>
+			<label class="advanced-option hidden">
+				<input id="inspiration-time" type="number" value="1" min="1" max="5" step=".5">
+				Segundos de inspiración
+			</label>
+			<label class="advanced-option hidden">
+				<input id="expiration-time" type="number" value="1" min="1" max="5" step=".5">
+				Segundos de espiración
+			</label>
+			<label>
+				<input id="apnea-expiration-time" type="number" value="5" min="20" max="300" step="5">
+				Segundos de apnea con espiración
+			</label>
+			<label class="advanced-option hidden">
+				<input id="apnea-inspiration-time" type="number" value="3" min="5" max="60" step="5">
+				Segundos de apnea con inspiración
+			</label>
+			<label class="advanced-option hidden">
+				<input id="relaxation-time" type="number" value="5" min="0" max="10" step="1">
+				Segundos de pausa tras apneas
+			</label>
+			<label>
+				<input id="increase-apnea-time-each-round" type="number" value="5" min="0" max="60" step="5">
+				Aumentador de segundos de apnea con espiración tras cada ronda
+			</label>
+			<h3 class="advanced-option hidden">Guías sonoras</h3>
+			<label class="advanced-option hidden">
+				<input id="sound-guides-each-breath" type="number" value="0" min="0" max="20" step="5">
+				Cada X respiraciones
+			</label>
+			<label class="advanced-option hidden">
+				<input id="sound-guides-remaining-breath" type="number" value="5" min="0" max="10" step="1">
+				En X respiraciones restantes
+			</label>
+			<label class="advanced-option hidden">
+				<input id="sound-guides-each-apnea-time" type="number" value="20" min="0" max="60" step="10">
+				Cada X segundos de apnea
+			</label>
+			<label class="advanced-option hidden">
+				<input id="sound-guides-remaining-apnea-time" type="number" value="5" min="0" max="60" step="5">
+				En X segundos de apnea restantes
+			</label>
+			<button id="advanced-options" type="button">Avanzadas</button>
+		</section>
+		<section id="visual">
+			<h2 id="round-title">Ronda 0</h2>
+			<div id="lungs">
+				<span>&infin;</span>
+				<div></div>
+			</div>
+			<table id="round-list">
+				<thead>
+					<tr>
+						<th>Ronda</th>
+						<th>Apnea</th>
+						<th>Progreso</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot></tfoot>
+			</table>
+			<button id="start" type="button">Empezar</button>
+			<button id="pause" class="hidden" type="button">Pausar</button>
+			<button id="end" class="hidden" type="button">Terminar</button>
+		</section>
+		<section>
+			<audio id="inspire-sound" src="media/Seve - Tez Cadey.mp3"></audio>
+		</section>
+	</form>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
